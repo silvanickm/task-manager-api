@@ -12,6 +12,10 @@ API REST construída com Node.js e Express com objetivo de evoluir para um siste
 ## 📌 Funcionalidade Implementada
 
 - GET /tasks
+- POST /tasks
+  - Validação de título
+  - Status 201 em caso de sucesso
+  - Status 400 em caso de erro
 
 ## 🎯 Objetivo do Projeto
 
