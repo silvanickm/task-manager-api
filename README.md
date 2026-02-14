@@ -2,29 +2,67 @@
 
 API REST construída com Node.js e Express com objetivo de evoluir para um sistema real multiusuário de gerenciamento de tarefas.
 
-## 🚀 Estrutura Atual
-
-- server.js (inicialização do servidor)
-- app.js (configuração da aplicação)
-- Rotas organizadas em módulos
-- Controller separado da camada de rotas
-
-## 📌 Funcionalidade Implementada
-
-- GET /tasks
-- POST /tasks
-  - Validação de título
-  - Status 201 em caso de sucesso
-  - Status 400 em caso de erro
+---
 
 ## 🎯 Objetivo do Projeto
 
 Simular a construção de um backend real, aplicando boas práticas de organização e arquitetura desde o início.
 
-## 🔜 Próximas Evoluções
+Projeto em evolução contínua para se tornar um sistema mais robusto com usuários, autenticação e persistência de dados.
 
-- Implementar criação de tarefas
-- Implementar usuários
-- Relacionar tarefas a usuários
+---
+
+## 🚀 Estrutura Atual
+
+- server.js → Inicialização do servidor  
+- src/app.js → Configuração da aplicação  
+- src/routes → Definição das rotas  
+- src/controllers → Regras de negócio separadas  
+
+Arquitetura baseada em separação de responsabilidades (Server → App → Routes → Controllers).
+
+---
+
+## 📦 Funcionalidades Implementadas
+
+### ✔ GET /tasks
+Lista todas as tarefas cadastradas.
+
+### ✔ GET /tasks/:id
+Busca tarefa específica por ID.
+- 200 → Sucesso
+- 404 → Tarefa não encontrada
+
+### ✔ POST /tasks
+Cria nova tarefa.
+- Validação de título obrigatório
+- 201 → Criado com sucesso
+- 400 → Dados inválidos
+
+---
+
+## 🛠 Tecnologias Utilizadas
+
+- Node.js
+- Express
+- JavaScript
+- Arquitetura modular
+
+---
+
+## ▶ Como Executar o Projeto
+
+1. Instale as dependências:
+
+```bash
+npm install
+```
+
+## Próximas Evoluções
+
+- Implementar DELETE /tasks/:id
+- Implementar PUT /tasks/:id
 - Persistência de dados
+- Sistema de usuários
 - Autenticação
+- Integração com banco de dados
