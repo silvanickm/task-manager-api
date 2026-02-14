@@ -44,6 +44,11 @@ Remove uma tarefa pelo ID.
 - 200 → Tarefa removida com sucesso
 - 404 → Tarefa não encontrada
 
+### ✏ PUT /tasks/:id
+Atualiza o título de uma tarefa existente.
+- 200 → Atualização realizada com sucesso
+- 400 → Dados inválidos
+- 404 → Tarefa não encontrada
 ---
 
 ## 🛠 Tecnologias Utilizadas
@@ -67,7 +72,7 @@ npm install
 
 
 - [x] Implementar DELETE /tasks/:id
-- [ ] Implementar PUT /tasks/:id
+- [x] Implementar PUT /tasks/:id
 - [ ] Persistência de dados
 - [ ] Sistema de usuários
 - [ ] Autenticação

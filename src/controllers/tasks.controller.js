@@ -45,3 +45,22 @@ exports.deleteTask = (req, res) => {
 
     res.status(200).json({ message: "Task removida com sucesso" });
 };
+
+exports.updateTask = (req, res) => {
+    const { id } = req.params;
+    const { title } = req.body;
+
+    if (!title || title.trim() === "") {
+        return res.status(400).json({ message: "Title é obrigatório" });
+    }
+
+    const taskIndex = tasks.findIndex(t => t.id == id);
+
+    if (taskIndex === -1) {
+        return res.status(404).json({ message: "Task não encontrada" });
+    }
+
+    tasks[taskIndex].title = title;
+
+    res.status(200).json(tasks[taskIndex]);
+};
