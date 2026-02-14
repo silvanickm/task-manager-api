@@ -32,5 +32,16 @@ exports.getTaskById = (req, res) => {
 
     res.status(200).json(task);
 };
+exports.deleteTask = (req, res) => {
+    const { id } = req.params;
 
+    const taskIndex = tasks.findIndex(t => t.id == id);
 
+    if (taskIndex === -1) {
+        return res.status(404).json({ message: "Task não encontrada" });
+    }
+
+    tasks.splice(taskIndex, 1);
+
+    res.status(200).json({ message: "Task removida com sucesso" });
+};

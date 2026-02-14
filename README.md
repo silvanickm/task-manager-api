@@ -39,6 +39,11 @@ Cria nova tarefa.
 - 201 → Criado com sucesso
 - 400 → Dados inválidos
 
+### 🗑 DELETE /tasks/:id
+Remove uma tarefa pelo ID.
+- 200 → Tarefa removida com sucesso
+- 404 → Tarefa não encontrada
+
 ---
 
 ## 🛠 Tecnologias Utilizadas
@@ -60,9 +65,10 @@ npm install
 
 ## Próximas Evoluções
 
-- Implementar DELETE /tasks/:id
-- Implementar PUT /tasks/:id
-- Persistência de dados
-- Sistema de usuários
-- Autenticação
-- Integração com banco de dados
+
+- [x] Implementar DELETE /tasks/:id
+- [ ] Implementar PUT /tasks/:id
+- [ ] Persistência de dados
+- [ ] Sistema de usuários
+- [ ] Autenticação
+- [ ] Integração com banco de dados
