@@ -39,16 +39,27 @@ Cria nova tarefa.
 - 201 → Criado com sucesso
 - 400 → Dados inválidos
 
-### 🗑 DELETE /tasks/:id
-Remove uma tarefa pelo ID.
-- 200 → Tarefa removida com sucesso
-- 404 → Tarefa não encontrada
-
 ### ✏ PUT /tasks/:id
 Atualiza o título de uma tarefa existente.
 - 200 → Atualização realizada com sucesso
 - 400 → Dados inválidos
 - 404 → Tarefa não encontrada
+
+### 🗑 DELETE /tasks/:id
+Remove uma tarefa pelo ID.
+- 200 → Tarefa removida com sucesso
+- 404 → Tarefa não encontrada
+
+---
+
+## 💾 Persistência de Dados
+
+O projeto utiliza `fs.promises` para:
+
+- Ler tarefas do arquivo `tasks.json`
+- Atualizar o arquivo após cada modificação
+- Manter os dados salvos mesmo após reiniciar o servidor
+
 ---
 
 ## 🛠 Tecnologias Utilizadas
@@ -56,7 +67,9 @@ Atualiza o título de uma tarefa existente.
 - Node.js
 - Express
 - JavaScript
-- Arquitetura modular
+- fs.promises
+- Async/Await
+- Git
 
 ---
 
@@ -68,12 +81,21 @@ Atualiza o título de uma tarefa existente.
 npm install
 ```
 
+2. Inicie o Servidor:
+
+- node server.js
+
 ## Próximas Evoluções
 
 
 - [x] Implementar DELETE /tasks/:id
 - [x] Implementar PUT /tasks/:id
-- [ ] Persistência de dados
+- [x] Persistência de dados
 - [ ] Sistema de usuários
 - [ ] Autenticação
 - [ ] Integração com banco de dados
+
+## 📌 Status
+
+- Projeto em evolução contínua
+- Backend estruturado com persistência local
