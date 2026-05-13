@@ -1,24 +1,10 @@
 let tasks = [];
 
-const fs = require("fs").promises;
-const path = require("path");
-
-const filePath = path.join(__dirname, "../../tasks.json");
-
-async function readTasks() {
-    try {
-        const data = await fs.readFile(filePath, "utf-8");
-        tasks = JSON.parse(data);
-    } catch (error) {
-        tasks = [];
-    }
-}
-async function writeTasks(tasks) {
-    await fs.writeFile(filePath, JSON.stringify(tasks, null, 2));
-}
+const taskService = require("../services/task.service");
 
 exports.getTasks = async (req, res) => {
-    await readTasks();
+    const tasks = await taskService.getAllTasks();
+
     res.status(200).json(tasks);
 };
 
